@@ -1,0 +1,81 @@
+
+Eu como usuário que ser capaz de me cadastrar no sistema com as seguintes informações
+- email
+- data nascimento
+- tipo de usuario (DEFAULT, PREMIUM)
+Observação:
+- O sistema não deve permitir que eu me cadastre com menos de 16 anos
+- Todas as informações são obrigatorias
+
+Eu como usuário quero ser capaz de consultar o usuário pelo id e receber as seguintes informações de resposta:
+- id
+- email
+- data nascimento
+- tipo de usuario
+Observações:
+- Caso não exista usuário para o id informado deve ser retornado um 404
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Eu como usuário quero ser capaz de cadastrar um post com as seguintes informações:
+- Título
+- Tag
+- Data e hora do post
+- Mensagem
+Observação:
+- A mensagem do post deve conter no máximo 255 caracteres para usuários DEFAULT
+- A mensagem do post não tem limites de caracteres para usuários PREMIUM
+- Todas as informações são obrigatorias
