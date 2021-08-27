@@ -6,14 +6,14 @@ import org.springframework.stereotype.Component;
 
 import br.com.dextra.core.models.CadastrarUsuarioCommand;
 import br.com.dextra.core.models.UsuarioDto;
-import br.com.dextra.core.ports.outgoing.UsuarioPersisence;
+import br.com.dextra.core.ports.outgoing.UsuarioPersistence;
 import br.com.dextra.infra.entities.UsuarioEntity;
 import br.com.dextra.infra.repos.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-public class UsuarioAdapter implements UsuarioPersisence {
+public class UsuarioAdapter implements UsuarioPersistence {
 
 	private final UsuarioRepository usuarioRepository;
 

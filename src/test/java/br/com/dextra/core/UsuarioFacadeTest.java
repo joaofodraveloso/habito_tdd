@@ -24,14 +24,14 @@ import br.com.dextra.core.exceptions.UsuarioNaoPossuiIdadeMinimaException;
 import br.com.dextra.core.models.CadastrarUsuarioCommand;
 import br.com.dextra.core.models.ObterUsuarioQuery;
 import br.com.dextra.core.models.UsuarioDto;
-import br.com.dextra.core.ports.outgoing.UsuarioPersisence;
+import br.com.dextra.core.ports.outgoing.UsuarioPersistence;
 
 @DisplayName("Core: Usuário")
 @ExtendWith(MockitoExtension.class)
 class UsuarioFacadeTest {
 
 	@Mock
-	private UsuarioPersisence usuarioPersistence;
+	private UsuarioPersistence usuarioPersistence;
 
 	@InjectMocks
 	private UsuarioFacade facade;

@@ -5,7 +5,7 @@ import java.util.Optional;
 import br.com.dextra.core.models.CadastrarUsuarioCommand;
 import br.com.dextra.core.models.UsuarioDto;
 
-public interface UsuarioPersisence {
+public interface UsuarioPersistence {
 
 	UsuarioDto cadastrarUsuario(CadastrarUsuarioCommand command);
 

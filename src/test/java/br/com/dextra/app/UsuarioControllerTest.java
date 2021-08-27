@@ -100,7 +100,7 @@ class UsuarioControllerTest {
 					.endJson());
 		// @formatter:on
 
-		doThrow(new UsuarioNaoPossuiIdadeMinimaException("Mensagem de erro")).when(cadastrarUsuario)
+		doThrow(new UsuarioNaoPossuiIdadeMinimaException()).when(cadastrarUsuario)
 				.executar(any(CadastrarUsuarioCommand.class));
 
 		ResultActions resultado = mockMvc.perform(request);
@@ -108,7 +108,7 @@ class UsuarioControllerTest {
 		verify(cadastrarUsuario).executar(any(CadastrarUsuarioCommand.class));
 
 		resultado.andExpect(status().isBadRequest()).andExpect(jsonPath("codigo").value("400"))
-				.andExpect(jsonPath("erros").value(hasItem("Mensagem de erro")));
+				.andExpect(jsonPath("erros").value(hasItem("Usuário não possui idade minima para cadastro")));
 	}
 
 	@Test
@@ -125,9 +125,6 @@ class UsuarioControllerTest {
 					.name("tipoUsuario").nullValue()
 					.endJson());
 		// @formatter:on
-
-		doThrow(new UsuarioNaoPossuiIdadeMinimaException("Mensagem de erro")).when(cadastrarUsuario)
-				.executar(any(CadastrarUsuarioCommand.class));
 
 		ResultActions resultado = mockMvc.perform(request);
 
@@ -169,8 +166,7 @@ class UsuarioControllerTest {
 
 		final Long USUARIO = 6L;
 
-		doThrow(new UsuarioNaoExisteException("Não existe usuário para o id informado")).when(obterUsuario)
-				.executar(any(ObterUsuarioQuery.class));
+		doThrow(new UsuarioNaoExisteException()).when(obterUsuario).executar(any(ObterUsuarioQuery.class));
 
 		MockHttpServletRequestBuilder request = MockMvcRequestBuilders.get("/usuario/{usuario}", USUARIO);
 
@@ -179,6 +175,6 @@ class UsuarioControllerTest {
 		verify(obterUsuario).executar(any(ObterUsuarioQuery.class));
 
 		resultado.andExpect(status().isNotFound()).andExpect(jsonPath("codigo").value("404"))
-				.andExpect(jsonPath("erros").value(hasItem("Não existe usuário para o id informado")));
+				.andExpect(jsonPath("erros").value(hasItem("Usuário não existe")));
 	}
 }

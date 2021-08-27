@@ -74,8 +74,18 @@ Eu como usuário quero ser capaz de cadastrar um post com as seguintes informaç
 - Título
 - Tag
 - Data e hora do post
-- Mensagem
+- Conteudo
 Observação:
 - A mensagem do post deve conter no máximo 255 caracteres para usuários DEFAULT
 - A mensagem do post não tem limites de caracteres para usuários PREMIUM
 - Todas as informações são obrigatorias
+
+
+
+
+
+
+
+
+
+
